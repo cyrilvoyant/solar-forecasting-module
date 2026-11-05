@@ -1,0 +1,21 @@
+[submodule "materials/www"]
+	path = materials/www
+	url = https://github.com/cyrilvoyant/www.git
+[submodule "materials/cyrilvoyant.github.io"]
+	path = materials/cyrilvoyant.github.io
+	url = https://github.com/cyrilvoyant/cyrilvoyant.github.io.git
+[submodule "materials/Make_Stationary"]
+	path = materials/Make_Stationary
+	url = https://github.com/cyrilvoyant/Make_Stationary.git
+[submodule "materials/solar-variability-scv"]
+	path = materials/solar-variability-scv
+	url = https://github.com/cyrilvoyant/solar-variability-scv.git
+[submodule "materials/nice-metrics"]
+	path = materials/nice-metrics
+	url = https://github.com/cyrilvoyant/nice-metrics.git
+[submodule "materials/ARTU"]
+	path = materials/ARTU
+	url = https://github.com/cyrilvoyant/ARTU.git
+[submodule "materials/PV_ELM_pred"]
+	path = materials/PV_ELM_pred
+	url = https://github.com/cyrilvoyant/PV_ELM_pred.git

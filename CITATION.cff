@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this learning module, please cite it as below."
+title: "Forecasting the intermittent solar resource: a 10-hour computational learning module"
+type: software
+authors:
+  - family-names: "Voyant"
+    given-names: "Cyril"
+    orcid: "https://orcid.org/0000-0003-0242-7377"
+    affiliation: "Mines Paris - PSL, O.I.E. center"
+license: CC-BY-4.0
+repository-code: "https://github.com/cyrilvoyant/solar-forecasting-module"
+url: "https://www.cyrilvoyant.com/teaching/solar-forecasting-course/"
+keywords:
+  - solar energy
+  - solar radiation forecasting
+  - time series
+  - persistence
+  - engineering education
