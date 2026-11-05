@@ -174,7 +174,9 @@ git clone --recurse-submodules https://github.com/cyrilvoyant/solar-forecasting-
 
 ## How to cite
 
-TODO after acceptance (JOSE DOI and Zenodo archive).
+Voyant C. (2026). *Forecasting the intermittent solar resource: a 10-hour computational learning module.* Zenodo. doi:[10.5281/zenodo.23987900](https://doi.org/10.5281/zenodo.23987900) (all versions).
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23987900.svg)](https://doi.org/10.5281/zenodo.23987900)
 
 ## Licence
 
