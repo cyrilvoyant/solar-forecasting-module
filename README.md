@@ -44,8 +44,6 @@ Hourly GHI measured at Ajaccio (Corsica, 41.9° N, 8.8° E, 4 m), Météo-France
 
 The file [`data/ajaccio_ghi_1998-2008.csv`](data/ajaccio_ghi_1998-2008.csv) (J/cm²; Wh/m² = J/cm² / 0.36) comes from Météo-France open data, *Données climatologiques de base – horaires* ([data.gouv.fr](https://www.data.gouv.fr/fr/datasets/donnees-climatologiques-de-base-horaires/)), Licence Ouverte / Open Licence 2.0 (Etalab). [`data/make_ajaccio_csv.py`](data/make_ajaccio_csv.py) rebuilds it from the source.
 
-Be careful with the hour. For 1998–2007, Météo-France gives the hourly global radiation in true solar time (column GLO2); for 2008, in UTC (column GLO). The column `hour_reference` says which. This is the kind of detail that session 1 is about.
-
 A note on words. In the literature, the clear-sky index is usually a ratio, GHI / GHI_cs. Here it is a difference, GHI − GHI_cs: no division by small values at sunrise and sunset, and the same unit as the GHI. Session 2 discusses both.
 
 ## The sequence: 5 sessions of 2 hours, plus group work at home
