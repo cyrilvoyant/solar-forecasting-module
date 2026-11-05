@@ -46,7 +46,7 @@ Hourly GHI measured at Ajaccio (Corsica, 41.9° N, 8.8° E, 4 m), Météo-France
 
 ## The sequence: 5 sessions of 2 hours, plus group work at home
 
-Each session: a short lecture (slides of the course), then the interactive pages, then the code. The questions at the end of each session check understanding; they are not graded.
+Each session: a short lecture ([slides EN](https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pdf) · [FR](https://www.cyrilvoyant.com/assets/course/Prevision-de-la-Ressource-Solaire-Intermittente_FR.pdf)), then the interactive pages, then the code. The questions at the end of each session check understanding; they are not graded.
 
 ### Before session 1 (home, individual): literature review
 
@@ -150,7 +150,7 @@ The group is an engineering firm consulted by the developer of a smart district 
 - Duration: 10 hours in class (5 × 2 h) plus group work at home.
 - First year: sessions 1 to 4 and the AR only. Second year: the full module with ELM and online learning.
 - Software: MATLAB advised, Python possible.
-- The slides of the course: TODO (Cyril: publish the PDF of the lecture here, under CC BY?).
+- The slides of the course (59 slides, CC BY 4.0): English [PDF](https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pdf) · [PPTX](https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pptx); French [PDF](https://www.cyrilvoyant.com/assets/course/Prevision-de-la-Ressource-Solaire-Intermittente_FR.pdf) · [PPTX](https://www.cyrilvoyant.com/assets/course/Prevision-de-la-Ressource-Solaire-Intermittente_FR.pptx). Sources in `materials/www/assets/course/`.
 
 ## Repository layout
 
