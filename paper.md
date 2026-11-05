@@ -21,54 +21,58 @@ bibliography: paper.bib
 
 # Summary
 
-Solar production follows the clouds. To integrate it into the grid, to drive a battery or to sell electricity at the right price, it must be forecast, here one hour ahead. This module teaches how to do it, step by step, on ten years of hourly global horizontal irradiation (GHI) measured at Ajaccio, Corsica.
+Solar production follows the clouds. To put it on the grid, to drive a battery or to sell electricity at the right time, it must be forecast; here, one hour ahead. This module teaches how, on eleven years of hourly global horizontal irradiation (GHI) measured at Ajaccio, Corsica (Météo-France open data).
 
-The module lasts 10 hours in class (five sessions of 2 hours) plus group work at home. It follows one chain that comes back in every session: GHI measurements, clear-sky model, clear-sky index (CSI), centring, chronological split, model (persistence, AR, ELM), forecast, back to GHI, evaluation. Each session combines a short lecture, interactive browser pages and open MATLAB/Python codes. All pages exist in English and French.
+It lasts 10 hours in class (five sessions of 2 hours), plus group work at home. One chain comes back in every session: GHI, clear-sky model, clear-sky index (CSI), centring, chronological split, model (persistence, AR, ELM), forecast, back to GHI, evaluation. Each session mixes a short lecture, interactive pages that run in the browser, and open MATLAB codes. The pages exist in English and French.
 
 # Statement of need
 
-Students and engineers who start in solar forecasting find two kinds of material: research papers, which assume the basics, and generic machine-learning tutorials, which skip them. Neither says what to do first: remove the solar cycle, measure how forecastable the site is, and compare any model with a simple reference.
+A student who starts in solar forecasting finds research papers, which assume the basics, and machine-learning tutorials, which skip them. Neither says what to do first: remove the solar cycle, measure how forecastable the site is, and compare any model with a simple reference.
 
-This last point is the core of the module. A model that does not beat persistence brings nothing. On the Ajaccio test year (2007), the smart persistence divides the RMSE of the simple persistence by 1.7; the AR(2) gains 3 % over it, and the ELM 7 %. The good question is therefore not "what is the best model?" but "is the gain worth the cost?" (computing, data, maintenance, monitoring). This frugal view is rarely taught, although it is what an engineer needs to decide whether to build a forecast, buy it, or subscribe to a weather service.
+This is the core of the module. A model that does not beat persistence brings nothing. On the Ajaccio test year (2007), the smart persistence divides the RMSE of the simple persistence by 1.7; the AR(2) gains 3 % over it, the ELM 7 %. So the question is not "which model is the best?" but "is the gain worth the cost?": computing, data, maintenance, monitoring. An engineer needs this to decide whether to build a forecast, buy it, or subscribe to a weather service. It is rarely taught.
 
-The module is built on published, open research tools: benchmarks for solar forecasting [@voyant2022benchmarks], the clear-sky index and its role in short-term forecasting [@voyant2025clearsky], the stochastic coefficient of variation and forecastability [@voyant2026scv], and the NICE metrics [@voyant2025nice]. It gives students a guided entry into this literature [@voyant2017review].
+The module rests on published, open tools: benchmarks for solar forecasting [@voyant2022benchmarks], the role of the clear-sky model [@voyant2025clearsky], the stochastic coefficient of variation and forecastability [@voyant2026scv], the NICE metrics [@voyant2025nice]. It is also a guided entry into the literature [@voyant2017review].
 
 # Learning objectives
 
 At the end, students can:
 
-- explain why the grid needs solar forecasts, and in which unit;
+- say why the grid needs solar forecasts, and in which unit;
 - describe the components of the GHI and its double seasonality (day, year);
 - remove the solar cycle with a clear-sky model [@ineichen2008solis] and the CSI;
 - measure the variability and the forecastability of a site;
-- build an AR(p) model as a linear regression and estimate it by least squares [@box2015time; @hyndman2021fpp3];
+- write an AR(p) model as a linear regression and estimate it by least squares [@box2015time; @hyndman2021fpp3];
 - compare any model with persistence (nRMSE, nMBE, skill score, NICE);
-- train an Extreme Learning Machine [@huang2006elm] and an online model, and judge their frugality.
+- train an Extreme Learning Machine [@huang2006elm] and an online model, and judge whether they are worth it.
 
 # Content and instructional design
 
-| Session | Topic | Interactive pages and codes |
+| Session | Topic | Pages and codes |
 |---|---|---|
-| 1 | Why forecast solar? Solar radiation, position of the Sun | Sun, seasons and UTC |
+| 1 | Why forecast solar? Radiation, position of the Sun | Sun, seasons and UTC |
 | 2 | Time series, clear sky, CSI, stationarity | Make_Stationary |
-| 3 | Variability (sCV), forecastability (F), AR(p), least squares | sCV and F explorer; which forecast for which signal? |
-| 4 | References and evaluation: persistence, BLEND, ARTU, NICE | NICE, BLEND, ARTU, γ-index explorers |
+| 3 | Variability (sCV), forecastability (F), AR(p), least squares | sCV and F; which forecast for which signal? |
+| 4 | References and evaluation: persistence, BLEND, ARTU, NICE | NICE, BLEND, ARTU, γ-index |
 | 5 | ELM, online learning, frugality | persistence/AR/ELM comparator; PV_ELM_pred |
 
-The design follows three choices.
+Three choices.
 
-1. **One chain, always the same.** The nine steps of the forecasting chain are shown at the start and highlighted in each chapter. Students always know where they are.
-2. **Numbers before abstraction.** Each concept is first computed by hand on a few values (AR(1) with numbers, the matrix X built from five CSI values), then generalised.
-3. **Learn by doing, at home and in groups.** Three pieces of work frame the sessions: a literature review before session 1; between sessions 3 and 4, each student forecasts a time series of their choice with five methods and the group shares one GitHub repository of reusable functions; after session 5, a role play where the group, as an engineering firm, advises the developer of a smart district: build the forecast in-house, buy it, or subscribe to a numerical weather prediction service.
+1. **One chain, always the same.** The nine steps are shown at the start and highlighted in each chapter. Students know where they are.
+2. **Numbers before formulas.** Each idea is first computed by hand on a few values (an AR(1) with numbers, the matrix X built from five CSI values), then written in general.
+3. **Do it, in groups, at home.** A literature review before session 1. Between sessions 3 and 4, each student forecasts a time series of their choice with five methods, and the group shares one GitHub repository of reusable functions. After session 5, a role play: the group is an engineering firm that advises the developer of a smart district. Build the forecast, buy it, or subscribe to a numerical weather prediction service?
 
-The interactive pages let students change one parameter at a time (date, horizon, number of lags, window length) and see the effect immediately. The codes reproduce every number of the lecture.
+The pages change one parameter at a time (date, horizon, number of lags, window length) and show the effect at once. The codes reproduce the large majority of the numbers of the lecture.
 
 # Experience of use
 
-TODO (Cyril, in your own words): how the course came to be; where and since when it is taught (Mines Paris - PSL, UE14, first year; University of Corsica; ParisTech school, second year); number of students; what worked, what you changed (e.g. the clear-sky index as a difference rather than a ratio, day-only vs day + night errors); what students produce in the final role play.
+The course has been taught for ten years, to about ten students each time: at the University of Corsica, in the Paoli Tech engineering school (second and third year), and at Mines Paris - PSL, in UE14, as a mini-project on forecasting and energy systems. The material changed over the years; the interactive pages and the open codes are the latest addition.
+
+# Availability
+
+Repository, learning path and licences: <https://github.com/cyrilvoyant/solar-forecasting-module> (text CC BY 4.0, code MIT), archived on Zenodo [doi:10.5281/zenodo.23987900](https://doi.org/10.5281/zenodo.23987900). The pages and codes are pinned submodules, archived by Software Heritage. Data: Météo-France open data, Licence Ouverte 2.0, with a script that rebuilds the file.
 
 # Acknowledgements
 
-TODO (Cyril): colleagues, data provider (Météo-France), funding if any.
+The author thanks the students of Paoli Tech and Mines Paris - PSL, whose questions shaped this material, and Météo-France for the open data.
 
 # References

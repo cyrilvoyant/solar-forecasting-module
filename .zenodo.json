@@ -1,7 +1,7 @@
 {
   "title": "Forecasting the intermittent solar resource: a 10-hour computational learning module",
   "upload_type": "lesson",
-  "description": "<p>A 10-hour computational learning module (five sessions of 2 hours plus group work at home) on one-hour-ahead solar radiation forecasting, from the position of the Sun to the cost of a model: clear-sky index, variability and forecastability, AR models and least squares, evaluation against persistence (skill score, NICE), Extreme Learning Machine, online learning and frugality. Interactive browser pages (English and French) and open MATLAB/Python codes, pinned as submodules. Taught at Mines Paris - PSL, the University of Corsica and a ParisTech school.</p>",
+  "description": "<p>A 10-hour computational learning module (five sessions of 2 hours plus group work at home) on one-hour-ahead solar radiation forecasting, from the position of the Sun to the cost of a model: clear-sky index, variability and forecastability, AR models and least squares, evaluation against persistence (skill score, NICE), Extreme Learning Machine, online learning and frugality. Interactive browser pages (English and French) and open MATLAB codes, pinned as submodules. Taught for ten years at the University of Corsica (Paoli Tech) and at Mines Paris - PSL (UE14). Data: Meteo-France open data (Licence Ouverte 2.0), Ajaccio 1998-2008.</p>",
   "creators": [
     {
       "name": "Voyant, Cyril",

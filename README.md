@@ -1,18 +1,18 @@
 # Forecasting the intermittent solar resource: a 10-hour learning module
 
-Draft 2026-11-05. Learning path for the JOSE submission. Nothing is published yet.
+Forecast the solar radiation one hour ahead, and understand what you compute. From the position of the Sun to the evaluation of a model, with one question in mind: is a more complex model worth its cost?
 
-This module teaches how to forecast hourly solar radiation one hour ahead, from the position of the Sun to the evaluation of a model. It follows the course given at Mines Paris - PSL (UE14, first year of the civil engineering curriculum), at the University of Corsica and in a ParisTech school (second year).
+The course has been taught for ten years, to about ten students each time: at the University of Corsica (Paoli Tech engineering school, second and third year), and at Mines Paris - PSL (UE14, as a mini-project on forecasting and energy systems).
 
-Everything runs in a browser or in MATLAB/Python. The interactive pages and the codes already exist; this repository puts them in order, says what to do with each one and why.
+Everything runs in a browser or in MATLAB. The pages and the codes already exist. This repository puts them in order, and says what to do with each one, and why.
 
 ## Who it is for
 
 - engineering and master students (energy, environment, applied mathematics);
 - instructors who want a ready-to-use sequence on solar forecasting;
-- engineers who need to judge a forecast before buying or building one.
+- engineers who must judge a forecast before buying or building one.
 
-Prerequisites: basic statistics (mean, variance, correlation), linear algebra (matrix product), and a little MATLAB or Python.
+Prerequisites: basic statistics (mean, variance, correlation), linear algebra (matrix product), and a little MATLAB (Python is possible, but no Python version of the codes is provided).
 
 ## Learning objectives
 
@@ -32,7 +32,7 @@ At the end, you will be able to:
 |---|---|
 | GHI_t | global horizontal irradiation measured at hour t (Wh/m²) |
 | GHI_cs,t | clear-sky GHI (Solis model) |
-| CSI_t | clear-sky index: GHI_t − GHI_cs,t (Wh/m²) |
+| CSI_t | clear-sky index, here a difference: GHI_t − GHI_cs,t (Wh/m²) |
 | y_t | centred CSI: CSI_t − μ |
 | h | horizon, in time steps (here Δt = 1 h) |
 | p | number of lags of the AR model |
@@ -40,9 +40,13 @@ At the end, you will be able to:
 
 ## The data
 
-Hourly GHI measured at Ajaccio (Corsica, 41.9° N, 8.8° E, 4 m), Météo-France, 1998–2007. Training 1998–2005, validation 2006, test 2007.
+Hourly GHI measured at Ajaccio (Corsica, 41.9° N, 8.8° E, 4 m), Météo-France station 20004002, 1998–2008. Training 1998–2005, validation 2006, test 2007; 2008 is kept for the final project.
 
-> TODO (Cyril): the Météo-France file cannot be redistributed here without checking its licence. Options: point to the data source, or use an open dataset for the exercises.
+The file [`data/ajaccio_ghi_1998-2008.csv`](data/ajaccio_ghi_1998-2008.csv) (J/cm²; Wh/m² = J/cm² / 0.36) comes from Météo-France open data, *Données climatologiques de base – horaires* ([data.gouv.fr](https://www.data.gouv.fr/fr/datasets/donnees-climatologiques-de-base-horaires/)), Licence Ouverte / Open Licence 2.0 (Etalab). [`data/make_ajaccio_csv.py`](data/make_ajaccio_csv.py) rebuilds it from the source.
+
+Be careful with the hour. For 1998–2007, Météo-France gives the hourly global radiation in true solar time (column GLO2); for 2008, in UTC (column GLO). The column `hour_reference` says which. This is the kind of detail that session 1 is about.
+
+A note on words. In the literature, the clear-sky index is usually a ratio, GHI / GHI_cs. Here it is a difference, GHI − GHI_cs: no division by small values at sunrise and sunset, and the same unit as the GHI. Session 2 discusses both.
 
 ## The sequence: 5 sessions of 2 hours, plus group work at home
 
@@ -148,8 +152,16 @@ The group is an engineering firm consulted by the developer of a smart district 
 ## For instructors
 
 - Duration: 10 hours in class (5 × 2 h) plus group work at home.
-- First year: sessions 1 to 4 and the AR only. Second year: the full module with ELM and online learning.
-- Software: MATLAB advised, Python possible.
+- Shorter version: sessions 1 to 4, AR only. Full version: with the ELM and online learning.
+- Software: MATLAB advised. Python is possible, but no Python version of the codes is provided.
+- A typical 2-hour session:
+
+| Part | Time |
+|---|---|
+| lecture (slides) | 40 min |
+| interactive pages, in pairs | 30 min |
+| code: run, change one parameter, compare | 40 min |
+| questions, discussion | 10 min |
 - The slides of the course (59 slides, CC BY 4.0): English [PDF](https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pdf) · [PPTX](https://www.cyrilvoyant.com/assets/course/Forecasting-the-Intermittent-Solar-Resource_EN.pptx); French [PDF](https://www.cyrilvoyant.com/assets/course/Prevision-de-la-Ressource-Solaire-Intermittente_FR.pdf) · [PPTX](https://www.cyrilvoyant.com/assets/course/Prevision-de-la-Ressource-Solaire-Intermittente_FR.pptx). Sources in `materials/www/assets/course/`.
 
 ## Repository layout
